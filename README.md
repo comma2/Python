@@ -1,4 +1,3 @@
-
 from random import randint
 from os import remove,rename
 def getUserScore(userName):
