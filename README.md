@@ -38,11 +38,9 @@ def updateUserPoints(newUser,userName,score):
 def generateQuestion():
 	operandList = [0,0,0,0,0]
 	operatorList = ['','','','']
-	operatorDict ={1:'+ ',2:'-',3:'*',4:'**'}
-	
+	operatorDict ={1:'+ '2:'-'3:'*',4:'**'}
 	for index1 in range(0,5):
 		operandList[index1] = randint(1,9)
-
 	for index in range(0,4):
 		if index > 0 and operatorList[index-1] != '**':
 			operatorList[index] = operatorDict[randint(1,4)]
