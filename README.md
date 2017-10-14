@@ -1,7 +1,6 @@
 
 from random import randint
 from os import remove,rename
-
 def getUserScore(userName):
 	try:
 		input = open('userScores.txt','r')
@@ -17,10 +16,7 @@ def getUserScore(userName):
 		input = open('userScores.txt','w')
 		input.close()
 		return "-1"
-	
-
 def updateUserPoints(newUser,userName,score):
-
 	if newUser:
 		print "Hello New Work"
 		input = open('userScores.txt','a')
@@ -38,10 +34,8 @@ def updateUserPoints(newUser,userName,score):
 			output.write(line)
 		input.close()
 		output.close()
-		
 		remove('userScores.txt')
 		rename('userScores.tmp','userScores.txt')
-
 def generateQuestion():
 	operandList = [0,0,0,0,0]
 	operatorList = ['','','','']
@@ -57,15 +51,12 @@ def generateQuestion():
 			operatorList[index] = operatorDict[randint(1,3)]
 		
 	questionString = str(operandList[0])
-	
 	for index in range(0,4):
 		questionString = questionString+operatorList[index]+str(operandList[index+1])
-		
 	result = eval(questionString)
 	questionString = questionString.replace('**','^')
 	print '\n'+questionString
 	userResult = input('answer:')
-	
 	while True:
 		try:
 			if int(userResult) == result:
